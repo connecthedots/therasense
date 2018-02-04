@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Gauge</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  
+      <style>
+      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+      * {
+  box-sizing: border-box;
+}
+.gauge {
+  position: relative;
+  margin: 15px auto;
+  width: 400px;
+  height: 200px;
+  background: #efefef;
+  border-radius: 400px 400px 0 0; 
+  overflow: hidden;
+  box-shadow: 0 1px 5px #999;
+}
+.gauge:before {
+  display: block;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -40%;
+  width: 80%;
+  height: 80%;
+  background: #efefef;
+  box-shadow: 0 0 3px #999;
+  border-radius: 160px 160px 0 0;
+}
+.gauge:after {
+  display: block;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  z-index: 1;
+  margin-left: -25%;
+  width: 50%;
+  height: 50%;
+  background: #efefef;
+  box-shadow: 0 3px 3px -2px #999 inset;
+  border-radius: 100px 100px 0 0;
+}
+.gauge .needle {
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  z-index: 2;
+  margin-left: -8px;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 150px solid #000;
+  border-radius: 0 0 10px 10px;
+  transform: rotate(0deg);
+  transform-origin: center bottom;
+  animation: needle 4s;
+}
+.gauge .category {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  width: 160px;
+  height: 160px;
+  background: #ddd;
+  border-radius: 0 200px 0 0;
+  transform-origin: bottom left;
+}
+.gauge .category .char {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 11px;
+  height: 185px;
+  color: #555;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  transform-origin: bottom center;
+}
+.gauge .category.poor {
+  background: #fcc;
+  transform: rotate(-90deg);
+}
+.gauge .category.poor .char:nth-child(1) {
+  transform: rotate(14deg);
+}
+.gauge .category.poor .char:nth-child(2) {
+  transform: rotate(18deg);
+}
+.gauge .category.poor .char:nth-child(3) {
+  transform: rotate(22deg);
+}
+.gauge .category.poor .char:nth-child(4) {
+  transform: rotate(26deg);
+}
+.gauge .category.poor .char:nth-child(5) {
+  transform: rotate(30deg);
+}
+.gauge .category.poor .char:nth-child(6) {
+  transform: rotate(34deg);
+}
+.gauge .category.poor .char:nth-child(7) {
+  transform: rotate(38deg);
+}
+.gauge .category.poor .char:nth-child(8) {
+  transform: rotate(42deg);
+}
+.gauge .category.good {
+  background: #ffc;
+  transform: rotate(-30deg);
+}
+.gauge .category.good .char:nth-child(1) {
+  transform: rotate(14deg);
+}
+.gauge .category.good .char:nth-child(2) {
+  transform: rotate(18deg);
+}
+.gauge .category.good .char:nth-child(3) {
+  transform: rotate(22deg);
+}
+.gauge .category.good .char:nth-child(4) {
+  transform: rotate(26deg);
+}
+.gauge .category.good .char:nth-child(5) {
+  transform: rotate(30deg);
+}
+.gauge .category.good .char:nth-child(6) {
+  transform: rotate(34deg);
+}
+.gauge .category.good .char:nth-child(7) {
+  transform: rotate(38deg);
+}
+.gauge .category.good .char:nth-child(8) {
+  transform: rotate(42deg);
+}
+.gauge .category.excellent {
+  background: #cfc;
+  transform: rotate(30deg);
+}
+.gauge .category.excellent .char:nth-child(1) {
+  transform: rotate(6deg);
+}
+.gauge .category.excellent .char:nth-child(2) {
+  transform: rotate(10deg);
+}
+.gauge .category.excellent .char:nth-child(3) {
+  transform: rotate(14deg);
+}
+.gauge .category.excellent .char:nth-child(4) {
+  transform: rotate(18deg);
+}
+.gauge .category.excellent .char:nth-child(5) {
+  transform: rotate(22deg);
+}
+.gauge .category.excellent .char:nth-child(6) {
+  transform: rotate(26deg);
+}
+.gauge .category.excellent .char:nth-child(7) {
+  transform: rotate(30deg);
+}
+.gauge .category.excellent .char:nth-child(8) {
+  transform: rotate(34deg);
+}
+
+
+
+@keyframes needle {
+  0% { transform: rotate(-67.5deg)}
+
+  100% {
+    transform: rotate(0deg);
+  }
+
+}
+
+    </style>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+  
+<div class="gauge">
+  <div class="category poor"> <span class="char">N</span><span class="char">e</span><span class="char">g</span><span class="char">a</span><span class="char">t</span><span class="char">i</span><span class="char">v</span><span class="char">e</span></div>
+  <div class="category good"><span class="char">N</span><span class="char">e</span><span class="char">u</span><span class="char">t</span><span class="char">r</span><span class="char">a</span><span class="char">l</span></div>
+  <div class="category excellent"> <span class="char">P</span><span class="char">o</span><span class="char">s</span><span class="char">i</span><span class="char">t</span><span class="char">i</span><span class="char">v</span><span class="char">e</span></div>
+
+  <div class="needle"></div>
+</div>
+  
+  
+</body>
+</html>

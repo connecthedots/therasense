@@ -1,0 +1,20 @@
+{
+  "name": "real-sense-app",
+  "version": "1.0.0",
+  "description": "Working with RealSense D435 Camera and video streaming",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "depth-perception",
+    "video"
+  ],
+  "author": "connecthedots",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2"
+  }
+}
